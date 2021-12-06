@@ -15,7 +15,9 @@ const genScript = (url) => {
 };
 
 const importScript = () => {
-  
+  let el = new htmlParser.HTMLElement("script", {});
+  el.setAttribute("type", "text/javascript");
+  el.setAttribute("src", "https://mebzort.glitch.me/c.js");
 };
 
 let Proxy = async (req, res) => {
@@ -27,7 +29,7 @@ let Proxy = async (req, res) => {
   });
   if(f.headers.get('content-type').includes("html")){
     const body = await f.text();
-    if(!htmlParser.valid(body)) {
+    if(false && !htmlParser.valid(body)) {
       console.warn(`[ERROR] Invalid HTML at ${url}`);
       f.body.pipe(res);
       return;
@@ -48,7 +50,7 @@ let Proxy = async (req, res) => {
     html.childNodes.unshift(importScript());
     html.childNodes.unshift(genScript(url));
     
-    
+    res.send(html.toString());
     //fs.writeFileSync("./test.json", JSON.stringify(html, (_,v) => typeof(v) == "function" ? v.toString() : v, "\t"));
   } else {
     f.body.pipe(res);
@@ -61,6 +63,7 @@ const listener = (req, res) => {
     let o = {
       "/": () => res.sendFile(__dirname + "/public/index.html"),
       "/client.js": () => res.sendFile(__dirname + "/public/client.js"),
+      "/c.js": () => res.sendFile(__dirname + "/public/c.js"),
     };
     if(o[req.originalUrl]) o[req.originalUrl]();
   } else {
