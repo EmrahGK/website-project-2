@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+    <title>MEB Zort Proxy</title>
+    <meta charset="UTF-8">
+    <meta author="Dennis and EmrahGK">
+    <script type="text/javascript" src="/client.js" defer></script>
+    <style>
+
+        body{
+            background-image: linear-gradient(to right,rgb(36, 36, 138),rgb(136, 22, 218),rgb(150, 15, 247),rgb(136, 22, 218),rgb(36, 36, 138));
+        }
+
+        #header-1{
+            font-family: Consolas;
+            color:transparent;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 20pt;
+            padding: 10pt 0 10px 0;
+            background: url(../images/text-bg.jpg);
+            background-size: 70%;
+            background-repeat: repeat-x; 
+            -webkit-background-clip: text;
+            animation: all 20s linear infinite;
+        }
+
+        #content{
+            width: 450px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 3em;
+        }
+
+        #search{
+                width: 380px;
+        }
+
+        #submit{
+            width: 57px;
+        }
+
+        #submit:hover{
+            background-color: aqua;
+            color: black;
+        }
+
+        #lucky{
+            margin-top: 1em;
+            float: right;
+            width: 55%;
+        }
+
+        #about-mebzort{
+            margin-top: 1em;
+            float: left;
+            width: 40%;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id="content">
+
+        <h1 id="header-1">MebZort</h1>
+        
+        <form action="http://www.google.com/search" method="get" id="form">
+            <input type="text" name="q" id="search"/>
+            <input type="submit" value="Ara" id="submit" />
+        </form>
+        
+
+        <button type="button" id="lucky">
+            Kendimi Şanslı Hissediyorum
+        </button>
+
+        <button type="button" id="about-mebzort">
+            MebZort Hakkında
+        </button>
+
+    </div>
+
+
+    <!--
+    <script>
+    document.write("The name of first form is : " + 
+                    window.document.forms["myform"].name);
+
+    document.write("<br> The name of second form is : " + 
+                    document.forms["myform2"].name);
+
+    document.write("<br> The second form can be referenced as:  " + 
+                    document["myform2"].name);
+
+    document.write("<br> Form2 can also be referenced as : " + 
+                    document.myform2.name);
+
+    var x = document.getElementById("myform");
+
+    var y = document.getElementById("myform2");
+
+    document.write("<br> The name of first form (via ID) is :"
+                    + x.name );
+
+    document.write("<br>The name of second form (via ID) is :"
+                    + y.name );
+    </script>
+    -->
+</body>
+  
+</html>
