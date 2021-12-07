@@ -27,7 +27,7 @@ let Proxy = async (req, res) => {
   let f = await fetch(url, {
     method: req.method,
   });
-  if(f.headers.get('content-type').includes("html")){
+  if(false && f.headers.get('content-type').includes("html")){
     const body = await f.text();
     if(false && !htmlParser.valid(body)) {
       console.warn(`[ERROR] Invalid HTML at ${url}`);
@@ -64,6 +64,7 @@ const listener = (req, res) => {
       "/": () => res.sendFile(__dirname + "/public/index.html"),
       "/client.js": () => res.sendFile(__dirname + "/public/client.js"),
       "/c.js": () => res.sendFile(__dirname + "/public/c.js"),
+      "/style.css": () => res.sendFile(__dirname + "/public/style.css"),
     };
     if(o[req.originalUrl]) o[req.originalUrl]();
   } else {
