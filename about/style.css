@@ -1,0 +1,33 @@
+body{
+    background-image: linear-gradient(to right,rgb(36, 36, 138),rgb(136, 22, 218),rgb(150, 15, 247),rgb(136, 22, 218),rgb(36, 36, 138));
+}
+
+#header-1{
+    font-family: Consolas;
+    color:transparent;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 20pt;
+    padding: 10pt 0 10px 0;
+    background: url(https://cdn.glitch.me/9a4f7495-710e-4e88-86d4-92e7236a12af%2Ftext-bg.jpg?v=1638869809056);
+    background-size: 35%;
+    background-repeat: repeat-x; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: all 20s linear infinite;
+}
+
+.text{
+    text-align: center;
+    color:black;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+
+#content{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
